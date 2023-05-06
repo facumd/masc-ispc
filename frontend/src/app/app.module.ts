@@ -9,7 +9,13 @@ import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, SharedModule, AppRoutingModule, HomeModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    SharedModule,
+    HomeModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
