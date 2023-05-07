@@ -1,11 +1,17 @@
-body{
-    margin-top:20px;
-    background:#f0a75f;
+body {
+  width: 100%;
+  background-image: url(/assets/img/Fondo_Textura_04.png);
+  font-family: 'Montserrat', sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
 }
 .btn-sample { 
   color: #ffffff; 
-  background-color: #E0AB2F; 
-  border-color: #EB7A1E; 
+  background-color: #669999; 
+  border-color: #669999; 
 } 
  
 .btn-sample:hover, 
@@ -14,8 +20,8 @@ body{
 .btn-sample.active, 
 .open .dropdown-toggle.btn-sample { 
   color: #ffffff; 
-  background-color: #D97320; 
-  border-color: #EB7A1E; 
+  background-color: #ff9933; 
+  border-color: #669999; 
 } 
  
 .btn-sample:active, 
@@ -56,9 +62,9 @@ fieldset[disabled] .btn-sample.active {
   border: 1px solid #e7e7e7;
 }
 .btn-sample2 { 
-  color: #6E5C5C; 
-  background-color: #E0EB07; 
-  border-color: #EB7A1E; 
+  color: #ffffff; 
+  background-color: #ff9933; 
+  border-color: #669999; 
 } 
  
 .btn-sample2:hover, 
@@ -66,9 +72,9 @@ fieldset[disabled] .btn-sample.active {
 .btn-sample2:active, 
 .btn-sample2.active, 
 .open .dropdown-toggle.btn-sample2 { 
-  color: #6E5C5C; 
-  background-color: #D97320; 
-  border-color: #EB7A1E; 
+  color: #ffffff; 
+  background-color: #669999; 
+  border-color: #ff9933; 
 } 
  
 .btn-sample2:active, 
