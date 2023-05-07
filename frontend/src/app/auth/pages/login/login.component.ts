@@ -4,4 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  constructor() {}
+
+  titulo: string = 'Log In';
+}

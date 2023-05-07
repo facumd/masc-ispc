@@ -4,4 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-registro',
   templateUrl: './registro.component.html',
 })
-export class RegistroComponent {}
+export class RegistroComponent {
+  constructor() {}
+
+  titulo: string = 'Registro';
+}
