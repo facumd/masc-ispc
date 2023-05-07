@@ -4,4 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
 })
-export class ContactoComponent {}
+export class ContactoComponent {
+  constructor() {}
+  titulo: string = 'Contacto';
+}
