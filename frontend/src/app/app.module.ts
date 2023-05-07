@@ -9,9 +9,10 @@ import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { PagosModule } from './pagos/pagos.module';
 import { ServiciosModule } from './servicios/servicios.module';
+import { TerminosycondicionesComponent } from './home/pages/terminosycondiciones/terminosycondiciones.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TerminosycondicionesComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

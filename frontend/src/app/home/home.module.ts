@@ -11,7 +11,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
   declarations: [
     ContactoComponent,
     NosotrosComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     CommonModule,
