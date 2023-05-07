@@ -1,12 +1,25 @@
-<div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold">{{titulo}}</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">"Si tomas la píldora azul, la historia termina, te despiertas en tu cama y crees lo que quieras
-      creer. Si tomas la píldora roja, te quedas en el País de las Maravillas y te enseño lo profunda que es la
-      madriguera del conejo"</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Pildora Azul</button>
-      <button type="button" class="btn btn-outline-danger btn-lg px-4">Pildora Roja</button>
+<body>
+    <div class="caja_seccion">
+        <form class="form-signin">
+            
+            <label for="inputEmail">Correo Electrónico</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="email@dominio.com" required autofocus>
+
+            <label for="inputPassword">Contraseña</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="**********" required>
+     
+            <div class="checkbox mb-3">
+                <label>
+                <input type="checkbox" value="remember-me"> Recordar contraseña
+                </label>
+            </div>
+            <button class="btn btn-lg btn-block" type="submit">Login</button>
+
+            <div class="form-label-group py-5">
+                <p class="text-center">Si todavía no te registraste, ingresá acá</p>
+
+                <button class="btn btn-lg btn-block" type="submit"><a routerLink="/registro">Quiero registrarme</a></button>
+            </div>
+        </form>
     </div>
-  </div>
-</div>
+</body>
