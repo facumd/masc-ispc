@@ -5,8 +5,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
+    border-radius: 10px;
   }
 
   .form-control {
@@ -16,11 +17,18 @@ body {
     width: 100%;
     border-radius: 5px;
     border-width: 1px;
+    border-color: #000000;
   }
+
+  form label, form legend {
+    display: block;
+    font-size: 18px;
+    margin: 10px auto;
+}
   
   .form-signin {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     padding: 5px;
     margin: auto;
   }
@@ -85,7 +93,7 @@ body {
   }
 
   .btn-block {
-    width: 100%;
+    width: 35%;
     color: white;
     background-color: #ff9933;
     font-size: 15px;
@@ -95,6 +103,7 @@ body {
     transition: 1s all;
     cursor: pointer;
     box-shadow: 2px 2px 10px 0.1px #245f5f;
+    padding: 15px 0;
   }
 
   a, a:hover {
