@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { PagosModule } from './pagos/pagos.module';
+import { ServiciosModule } from './servicios/servicios.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { PagosModule } from './pagos/pagos.module';
     HttpClientModule,
     SharedModule,
     HomeModule,
+    ServiciosModule,
     AuthModule,
     PagosModule,
     AppRoutingModule,
