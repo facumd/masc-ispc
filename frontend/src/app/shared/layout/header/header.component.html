@@ -1,0 +1,32 @@
+<nav class="navbar h-20 navbar-expand-lg bg-body">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">MASC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/servicios/categorias">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/carrito">Carrito</a>
+        </li>
+      </ul>
+      <form class="d-flex gap-3 px-2" role="search">
+        <button class="btn btn-outline-primary me-2" type="button" routerLink="/login">Iniciar Sesión</button>
+        <button class="btn btn-primary" type="button" routerLink="/registro">Registrarse</button>
+      </form>
+    </div>
+  </div>
+</nav>
