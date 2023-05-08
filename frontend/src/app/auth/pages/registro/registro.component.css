@@ -5,8 +5,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
+  border-radius: 10px;
 }
 
 .form-control {
