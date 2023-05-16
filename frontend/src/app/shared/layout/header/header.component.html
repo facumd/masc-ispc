@@ -1,33 +1,25 @@
-<nav class="navbar h-20 navbar-expand-lg bg-body">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/"><img src="../../../../assets/img//MASC_Logo_Completo_Colores.png" alt=""
-        width="180"></a>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top naranja rounded-bottom">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html"><span class="logo">MASC</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+        <li class="nav-item"><a class="nav-link text-white" routerLink="inicio">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/servicios/categorias">Servicios</a>
+        <li class="nav-item"><a class="nav-link text-white text-opacity-75" routerLink="nosotros">Nosotros</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+        <li class="nav-item"><a class="nav-link text-white text-opacity-75" routerLink="contacto">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contacto">Contacto</a>
+        <li class="nav-item"><a class="nav-link text-white text-opacity-50" href="servicios">Servicios</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/carrito">Carrito</a>
-        </li>
+        <li class="nav-item"><a class="nav-link text-white text-opacity-75 disabled" href="faq.html">FAQ</a></li>
+        <form class="d-flex gap-2 px-2" role="search">
+          <button class="btn btn-outline-light me-2" type="button" routerLink="login">Iniciar Sesión</button>
+          <button class="btn btn-success" type="button" routerLink="registro">Registrarse</button>
+        </form>
       </ul>
-      <form class="d-flex gap-3 px-2" role="search">
-        <button class="btn btn-outline-primary me-2" type="button" routerLink="/login">Iniciar Sesión</button>
-        <button class="btn btn-primary" type="button" routerLink="/registro">Registrarse</button>
-      </form>
     </div>
   </div>
 </nav>

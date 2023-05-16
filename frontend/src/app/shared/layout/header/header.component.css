@@ -1,18 +1,11 @@
-.btn-outline-primary {
-    border-color: #ff9933;
-    color: #ff9933;
-    border-radius: 50px;
-    cursor: pointer;
+.naranja {
+  background-color: #ff9933;
 }
 
-.btn-primary {
-    background-color: #ff9933;
-    border-radius: 50px;
-    cursor: pointer;
-    border-color: #ff9933;
-}
-
-.btn-outline-primary:hover{
-    background-color: #ff9933;
-    color: #ffffff;
+.logo {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-weight: 800;
 }
