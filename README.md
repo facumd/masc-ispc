@@ -2,13 +2,11 @@
 
 [Link del Sitio MASC Deployado: https://masc-ispc.netlify.app/](https://masc-ispc.netlify.app/)
 
-## MAqueta
+![MASC](https://github.com/facumd/masc-ispc/assets/95236196/f1594db4-e85a-4ee4-9bc2-74e6636ebda1)
+
+## Maqueta
 
 [Link de Repositorio Anterior (Maqueta)](https://github.com/hernan04/fullstack)
-
-## Home (SPA Angular)
-
-![home](https://user-images.githubusercontent.com/106122755/236710606-2a17d308-5ea3-49b4-884a-2aaf25e218d6.png)
 
 ## Instalación
 
