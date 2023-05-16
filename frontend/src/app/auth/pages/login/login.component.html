@@ -1,25 +1,85 @@
-<body class="container-md">
-    <div class="caja_seccion">
-        <form class="form-signin">
-            
-            <label for="inputEmail">Correo Electrónico</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="email@dominio.com" required autofocus>
+<!-- Section: Design Block -->
+<section class="d-flex flex-column">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            <form>
 
-            <label for="inputPassword">Contraseña</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="**********" required>
-     
-            <div class="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"> Recordar contraseña
-                </label>
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="form3Example3" class="form-control" />
+                                    <label class="form-label" for="form3Example3">Email address</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="form3Example4" class="form-control" />
+                                    <label class="form-label" for="form3Example4">Password</label>
+                                </div>
+
+                                <!-- Checkbox -->
+                                <div class="form-check d-flex justify-content-center mb-4">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
+                                        checked />
+                                    <label class="form-check-label" for="form2Example33">
+                                        Recuerdame
+                                    </label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-success btn-block mb-4 text-center">
+                                    Iniciar Sesión
+                                </button>
+                                <div class="mb-4 text-black text-opacity-50">¿No estas registrado aún?</div>
+                                <button type=" submit" class="btn btn-success btn-block mb-4" routerLinkg="/registro">
+                                    Registrarse
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+                        Bienvenidx! <br /><span class="text-success"> Inicia Sesión</span><br />
+                        <span class="text-black text-opacity-50">Para ver tu Perfil</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
+                        No menos de 690 caracteres! asi asi asi adipisicing elit.
+                        Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                        quibusdam tempora at cupiditate quis eum maiores libero
+                        veritatis? Dicta facilis sint aliquid ipsum atque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                        quibusdam tempora at cupiditate quis eum mcorrupti aliquam
+                        quibusdam tempora at cupiditate quis eum mcorrupti aliquam
+                        quibusdam tempora at cupiditate quis eum mcorrupti aliquam
+                        quibusdam tempora at cupiditate quis e
+                </div>
             </div>
-            <button class="btn btn-lg btn-block" type="submit">Login</button>
-
-            <div class="form-label-group py-5">
-                <p class="text-center">Si todavía no te registraste, ingresá acá</p>
-
-                <button class="btn btn-lg btn-block" type="submit"><a routerLink="/registro">Quiero registrarme</a></button>
-            </div>
-        </form>
+        </div>
     </div>
-</body>
+    <!-- Jumbotron -->
+</section>
+
+<div class="row align-items-md-stretch py-2">
+    <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-success rounded-3">
+            <h2>Cuidado Con Las Estafas</h2>
+            <p>Jamás te pediremos datos personales mas de los necesarios para registrarte, no se los des a nadie porque
+                estas al horno y bla bla bla... mas texto 3 renglones como min y max</p>
+            <button class="btn btn-outline-light" type="button">Example button</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+            <img class="rounded-3 my-5 img-fluid animated bounce"
+                src="https://masc-ispc.netlify.app/assets/img//MASC_Logo_Completo_Colores.png" height="200" width="300"
+                alt="..." />
+        </div>
+    </div>
+</div>
+<!-- Section: Design Block -->
