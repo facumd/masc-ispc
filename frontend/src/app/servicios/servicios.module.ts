@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ServiciosRoutingModule } from './servicios-routing.module';
-import { CategoriasComponent } from './pages/categorias/categorias.component';
+import { ServiciosComponent } from './pages/servicios/servicios.component';
+import { ProductosComponent } from './pages/servicios/productos/productos.component';
 
 @NgModule({
-  declarations: [CategoriasComponent],
+  declarations: [ServiciosComponent, ProductosComponent],
   imports: [CommonModule, ServiciosRoutingModule],
 })
 export class ServiciosModule {}
