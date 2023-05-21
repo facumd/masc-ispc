@@ -1,12 +1,10 @@
 from django.db import models
 from utils.model_abstracts import Model
 from django.contrib.auth.models import User as Usuario
+import os
 
 # Create your models here.
 
-
-def imagen_directory(instance, filename):
-    return 'producto/{0}/{1}'.format(instance.titulo, filename)
 
 class Categoria(Model):
 
@@ -38,6 +36,9 @@ class Subcategoria(Model):
     def __str__(self):
         return self.nombre
 
+def imagen_path(instance, filename):
+    return os.path.join('imagenes', 'productos', str(instance.pk), filename)
+
 class Producto(Model):
 
     class Meta:
@@ -48,7 +49,7 @@ class Producto(Model):
     descripcion = models.TextField(max_length=255, blank=True, null=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2, default=0.99)
     stock = models.IntegerField(default=1)
-    imagen = models.ImageField(upload_to=imagen_directory, max_length=500, blank=True, null=True)
+    imagen = models.CharField(max_length=255, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -57,4 +58,4 @@ class Producto(Model):
     subcategoria = models.ForeignKey(Subcategoria, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
-        return self.nombre
+        return self.titulo
