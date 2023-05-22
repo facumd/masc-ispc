@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
-import { PagosModule } from './pagos/pagos.module';
 import { ServiciosModule } from './servicios/servicios.module';
+import { PagosModule } from './pagos/pagos.module';
 
 @NgModule({
   declarations: [AppComponent],
