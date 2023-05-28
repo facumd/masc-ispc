@@ -1,11 +1,15 @@
-<div class="d-flex justify-content-center mb-3">
+<div class="d-flex justify-content-center">
+  <h1 class="mb-5">Productos</h1>
+</div>
+
+<div class="d-flex justify-content-center mb-3" *ngFor="let producto of productos">
   <div class="card" style="width: 40rem;">
-    <img [src]="productos.images[0]" alt="">
+    <img [src]="producto.image" alt="">
     <div class="card-body">
-      <h5 class="card-title">{{productos.title}}</h5>
-      <p class="card-text">{{productos.description}}
+      <h5 class="card-title">{{producto.titulo}}</h5>
+      <p class="card-text">{{producto.descripcion}}
       </p>
-      <a href="#" class="btn btn-primary">{{productos.price}}</a>
+      <a href="#" class="btn btn-primary">{{producto.precio|currency}}</a>
     </div>
   </div>
 </div>
