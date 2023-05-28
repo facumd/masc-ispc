@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { ServiciosModule } from './servicios/servicios.module';
 import { PagosModule } from './pagos/pagos.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,9 @@ import { PagosModule } from './pagos/pagos.module';
     ServiciosModule,
     AuthModule,
     PagosModule,
-    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,17 +7,41 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            <form>
+                            <form [formGroup]="loginForm">
 
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
+                                    <input formControlName="email" type="email" id="form3Example3" class="form-control" />
+
+                                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                    class="alert text-danger">
+                                
+                                        <div *ngIf="email.errors?.['required']">
+                                            El correo es requerido.
+                                        </div>
+                                        <div *ngIf="email.errors?.['email']">
+                                            El correo debe tener un formato válido.
+                                        </div>
+                                    </div>                                    
+
                                     <label class="form-label" for="form3Example3">Correo Electrónico</label>
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
+                                    <input formControlName="password" type="password" id="form3Example4" class="form-control" />
+
+                                    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                    class="alert text-danger">
+                                
+                                        <div *ngIf="password.errors?.['required']">
+                                            La contraseña es requerida.
+                                        </div>
+                                        <div *ngIf="password.errors?.['minlength']">
+                                            La contraseña debe tener mínimo 5 caracteres.
+                                        </div>
+                                    </div> 
+
                                     <label class="form-label" for="form3Example4">Contraseña</label>
                                 </div>
 
@@ -31,11 +55,11 @@
                                 </div>
 
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-success btn-block mb-4 text-center">
+                                <button type="submit" (click)="login()" class="btn btn-success btn-block mb-4 text-center">
                                     Iniciar Sesión
                                 </button>
                                 <div class="mb-4 text-black text-opacity-50">¿No estás registrado aún?</div>
-                                <button type=" submit" class="btn btn-success btn-block mb-4" routerLinkg="/registro">
+                                <button type=" submit" class="btn btn-success btn-block mb-4" routerLink="/registro">
                                     Registrarse
                                 </button>
                             </form>
