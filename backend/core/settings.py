@@ -44,18 +44,19 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ['api']
+PROJECT_APPS = ['apps.category',
+                'apps.subcategory', 'apps.product', 'apps.user']
 
 THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -131,32 +132,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
-    ],
-}
-
-CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
-CSRF_TRUSTED_ORIGIN = env.list('CSRF_TRUSTED_ORIGIN_DEV')
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-if not DEBUG:
-    ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEPLOY')
-    CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
-    CSRF_TRUSTED_ORIGIN = env.list('CSRF_TRUSTED_ORIGIN_DEPLOY')
-
-    DATABASES = {
-        "default": env.db("DATABASE_URL"),
-    }
-    DATABASES["default"]["ATOMIC_REQUESTS"] = True
+AUTH_USER_MODEL = 'user.UserAccount'
