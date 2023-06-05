@@ -1,40 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthResData } from '../../../models/auth/auth.model';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
-  
-  loginForm = this.formBuilder.group({
-    email:['', [Validators.required, Validators.email]],
-    password:  ['', [Validators.required, Validators.minLength(5)]],
-  })
+  loginForm: FormGroup;
+  token: string;
+  error: string = null;
+  success: string = null;
 
-  constructor(private formBuilder: FormBuilder, private router:Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {}
 
-  ngOnInit(): void {}
-
-  get email(){
-    return this.loginForm.controls.email;
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(8)]],
+    });
   }
 
-  get password(){
-    return this.loginForm.controls.password;
+  onLogin() {
+    console.log(this.loginForm);
+    console.log(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe({
+      next: (data: AuthResData) => {
+        (this.token = data.token),
+          console.log(data),
+          this.router.navigate(['/profile']);
+      },
+      error: (errorRes) => {
+        this.error = errorRes;
+      },
+    });
+    this.loginForm.reset();
   }
-
-  login() {
-    if(this.loginForm.valid) {
-      console.log ("Iniciar Sesión");
-      this.router.navigateByUrl('/');
-      this.loginForm.reset();
-    }
-    else {
-      this.loginForm.markAllAsTouched();
-      alert("Para iniciar sesión debe completar todos los campos");
-    }
-  }
-
 }

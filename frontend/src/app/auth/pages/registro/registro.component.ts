@@ -1,57 +1,64 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { min } from 'rxjs';
+import { AuthResData } from '../../../models/auth/auth.model';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
 })
 export class RegistroComponent implements OnInit {
-  
-  signupForm = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    surname: ['', [Validators.required, Validators.minLength(3)]],
-    email:['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(5)]],
-    repeatPassword: ['', [Validators.required, Validators.minLength(5)]],
-  })
+  signupForm: FormGroup;
+  error: string = null;
+  success: string = null;
 
-  constructor(private formBuilder: FormBuilder, private router:Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
-
-  get name(){
-    return this.signupForm.controls.name;
-  }
-  
-  get surname(){
-    return this.signupForm.controls.surname;
-  }
-  
-  get email(){
-    return this.signupForm.controls.email;
-  }
-
-  get password(){
-    return this.signupForm.controls.password;
+  ngOnInit() {
+    this.signupForm = this.formBuilder.group({
+      name: [null, Validators.required],
+      username: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      passwords: this.formBuilder.group(
+        {
+          password: [null, [Validators.required, Validators.minLength(8)]],
+          confirmpassword: [null, Validators.required],
+        },
+        { validators: this.passwordCheck }
+      ),
+    });
   }
 
-  get repeatPassword(){
-    return this.signupForm.controls.repeatPassword;
+  onSignup() {
+    console.log(this.signupForm);
+    this.authService
+      .signup({
+        email: this.signupForm.value.email,
+        username: this.signupForm.value.username,
+        name: this.signupForm.value.name,
+        password: this.signupForm.value.passwords.password,
+      })
+      .subscribe({
+        next: (data: AuthResData) => {
+          this.success = 'Signup was successful';
+          this.error = null;
+          this.router.navigate(['/login']);
+        },
+        error: (errorRes) => {
+          this.error = errorRes;
+        },
+      });
   }
 
-  signup() {
-    if(this.signupForm.valid) {
-      console.log ("Iniciar Sesión");
-      this.router.navigateByUrl('/');
-      this.signupForm.reset();
+  passwordCheck(control: FormGroup): { [s: string]: boolean } {
+    if (control.get('password').value != control.get('confirmpassword').value) {
+      return { notsame: true };
     }
-    else {
-      this.signupForm.markAllAsTouched();
-      alert("Para registrarse debe completar todos los campos");
-    }
+    return null;
   }
-
 }
-

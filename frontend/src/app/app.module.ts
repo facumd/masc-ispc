@@ -9,7 +9,7 @@ import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { ServiciosModule } from './servicios/servicios.module';
 import { PagosModule } from './pagos/pagos.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,9 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServiciosModule,
     AuthModule,
     PagosModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule
+    AccountModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
