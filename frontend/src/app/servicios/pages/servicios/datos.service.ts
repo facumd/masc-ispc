@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 //Hacer peticiones y CRUD
 import { HttpClient } from '@angular/common/http';
-import { Producto } from './interface/productos.interface';
 
 @Injectable({
   providedIn: 'root',
