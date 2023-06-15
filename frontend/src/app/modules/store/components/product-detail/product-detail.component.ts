@@ -3,7 +3,9 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { ProductDetail } from 'src/app/models/productDetail.model';
+
 import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,7 +19,8 @@ export class ProductDetailComponent {
     private route: ActivatedRoute,
     private productService: ProductService,
     public sanitizer: DomSanitizer,
-    public router: Router
+    public router: Router,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -42,5 +45,9 @@ export class ProductDetailComponent {
     );
   }
 
-  addToCart(product: ProductDetail | undefined) {}
+  addToCart(product: ProductDetail | undefined) {
+    if (product) {
+      this.cartService.addToCart(product);
+    }
+  }
 }
