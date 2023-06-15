@@ -62,7 +62,8 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse) {
     console.log(error);
-    let errorMessage = 'An unknown error occurred';
+    let errorMessage =
+      'El lado del cliente no ha podido conectarse con el servidor';
     if (!error.error) {
       return throwError(() => errorMessage);
     }
