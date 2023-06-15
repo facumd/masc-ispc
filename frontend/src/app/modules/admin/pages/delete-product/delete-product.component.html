@@ -1,0 +1,26 @@
+<h2 class="py-4 text-center">Eliminar Producto</h2>
+
+<div *ngIf="products.length > 0" id="main" class="container py-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre del Producto</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.title }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProduct(product.slug)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="products.length === 0">
+  <p>No se encontraron productos para eliminar.</p>
+</div>

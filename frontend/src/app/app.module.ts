@@ -9,6 +9,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { StoreModule } from './modules/store/store.module';
 import { HomeModule } from './modules/home/home.module';
 import { ProfileModule } from './modules/profile/profile.module';
+import { AdminModule } from './modules/admin/admin.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     AuthModule,
     StoreModule,
     ProfileModule,
+    AdminModule,
     AppRoutingModule,
   ],
   providers: [],
