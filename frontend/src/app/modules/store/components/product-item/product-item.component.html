@@ -1,0 +1,33 @@
+<div class="card mb-4">
+  <div class="d-flex justify-content-between p-3">
+    <p class="lead mb-0">{{ product?.title }}</p>
+    <div
+      class="bg-success rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
+      style="width: 35px; height: 35px"
+    >
+      <p class="text-white mb-0 small">x {{ product?.stock }}</p>
+    </div>
+  </div>
+  <img
+    height="354px"
+    width="354px"
+    src="{{ product?.image_link }}"
+    class="card-img-top"
+    alt="Laptop"
+  />
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <p class="small">Precio:</p>
+      <p class="small">{{ product?.price | currency }}</p>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+      <button
+        (click)="viewProductDetail(product?.slug!)"
+        class="btn btn-success"
+      >
+        Ver Más
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<section>
+  <div class="container py-5">
+    <div
+      class="row bg-body-tertiary rounded py-3"
+      *ngIf="products?.length !== 0"
+    >
+      <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+        class="col-md-12 col-lg-4 mb-4 mb-lg-0"
+      ></app-product-item>
+    </div>
+    <div
+      *ngIf="products?.length == 0"
+      class="text-center bg-body-tertiary rounded py-3"
+    >
+      <h3>No hay productos para mostrar</h3>
+    </div>
+  </div>
+</section>

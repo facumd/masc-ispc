@@ -1,0 +1,69 @@
+<div class="container py-2">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title py-3">Producto de MASC</h3>
+      <h6 class="card-subtitle py-3">{{ product?.title }}</h6>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="white-box text-center">
+            <img
+              height="600px"
+              width="430px"
+              [src]="
+                sanitizer.bypassSecurityTrustResourceUrl(
+                  product?.image_link ||
+                    '../../../../../assets/product-img/no-image.jpg'
+                )
+              "
+              class="img-responsive"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <h3 class="box-title mt-5">Descripción</h3>
+          <p>
+            {{ product?.description }}
+          </p>
+          <h2 class="mt-5">{{ product?.price | currency }}</h2>
+          <h4 class="box-title mt-5">Disponibilidad</h4>
+          <ul class="list-unstyled">
+            <li>Stock: {{ product?.stock }}</li>
+          </ul>
+          <button
+            class="btn btn-success btn-rounded"
+            (click)="addToCart(product)"
+          >
+            Agregar al Carrito
+          </button>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h3 class="box-title mt-5 mb-4">Información General</h3>
+          <div class="table-responsive">
+            <table class="table table-striped table-product">
+              <tbody>
+                <tr>
+                  <td width="390">Categoria</td>
+                  <td>{{ product?.subcategory?.category?.name }}</td>
+                </tr>
+                <tr>
+                  <td width="390">Subcategoria</td>
+                  <td>{{ product?.subcategory?.name }}</td>
+                </tr>
+                <tr>
+                  <td width="390">Vendedor</td>
+                  <td>
+                    {{
+                      product?.created_by?.username
+                        ? product?.created_by?.username
+                        : "Admin"
+                    }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

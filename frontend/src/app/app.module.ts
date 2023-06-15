@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
-import { AuthModule } from './auth/auth.module';
-import { ServiciosModule } from './servicios/servicios.module';
-import { PagosModule } from './pagos/pagos.module';
-import { AccountModule } from './account/account.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { StoreModule } from './modules/store/store.module';
+import { HomeModule } from './modules/home/home.module';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,10 +18,8 @@ import { AccountModule } from './account/account.module';
     HttpClientModule,
     SharedModule,
     HomeModule,
-    ServiciosModule,
     AuthModule,
-    PagosModule,
-    AccountModule,
+    StoreModule,
     AppRoutingModule,
   ],
   providers: [],
