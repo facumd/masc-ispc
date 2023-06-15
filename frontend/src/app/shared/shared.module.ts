@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { SuccessfulCheckoutComponent } from './successful-checkout/successful-checkout.component';
+import { CancelCheckoutComponent } from './cancel-checkout/cancel-checkout.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { AccessDeniedComponent } from './access-denied/access-denied.component';
     FooterComponent,
     NotFoundComponent,
     AccessDeniedComponent,
+    SuccessfulCheckoutComponent,
+    CancelCheckoutComponent,
   ],
   exports: [NavbarComponent, FooterComponent],
   imports: [CommonModule, RouterModule],
