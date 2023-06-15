@@ -94,6 +94,19 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# En caso de Querer usar una base de datos PostgreSQL
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get('DATABASE_NAME'),
+#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+#         'USER': os.environ.get('DATABASE_USERNAME'),
+#         'HOST': os.environ.get('DATABASE_HOST'),
+#         'DATABASE_PORT': os.environ.get('DATABASE_PORT'),
+#     }
+# }
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -145,7 +158,10 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-
 AUTH_USER_MODEL = "user.UserAccount"
+
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS")
+
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
+
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
