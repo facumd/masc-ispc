@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
-import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { StoreModule } from './modules/store/store.module';
+import { HomeModule } from './modules/home/home.module';
 
-import { HomeRoutingModule } from './modules/home/home-routing.moduke';
-import { AuthRoutingModule } from './modules/auth/auth-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,9 +17,9 @@ import { AuthRoutingModule } from './modules/auth/auth-routing.module';
     BrowserModule,
     HttpClientModule,
     SharedModule,
-    HomeRoutingModule,
+    HomeModule,
     AuthModule,
-    AuthRoutingModule,
+    StoreModule,
     AppRoutingModule,
   ],
   providers: [],
