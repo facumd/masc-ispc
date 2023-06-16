@@ -36,4 +36,8 @@ ng serve
 ng s
 ```
 
+4. Completar las variables de entorno necesarias:
+
+Quitar el `.dist` de los dos archivos que contienen esta denominación en sus nombres, tanto en el lado del servidor como del cliente e integrar las API KEYS propias
+
 <div style="text-align:center"><img src="https://user-images.githubusercontent.com/95236196/176600098-ff53559d-993a-4a71-9131-1a2fd282fc89.png" /></div>
