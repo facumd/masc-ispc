@@ -5,8 +5,8 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ('email', 'username', 'password', 'first_name', 'last_name')
-        extra_kwargs = {'password': {'write_only': True, 'min_length': 8}}
+        fields = ("email", "username", "password", "first_name", "last_name")
+        extra_kwargs = {"password": {"write_only": True, "min_length": 8}}
 
     def create(self, validated_data):
         return get_user_model().objects.create_user(**validated_data)
@@ -15,21 +15,18 @@ class UserSerializer(serializers.ModelSerializer):
 class AuthTokenSerializer(serializers.Serializer):
     email = serializers.CharField()
     password = serializers.CharField(
-        style={'input_type': 'password'},
-        trim_whitespace=False
+        style={"input_type": "password"}, trim_whitespace=False
     )
 
     def validate(self, attrs):
-        email = attrs.get('email')
-        password = attrs.get('password')
+        email = attrs.get("email")
+        password = attrs.get("password")
 
         user = authenticate(
-            request=self.context.get('request'),
-            email=email,
-            password=password
+            request=self.context.get("request"), email=email, password=password
         )
 
         if not user:
             raise serializers.ValidationError("Invalid User Credentials")
-        attrs['user'] = user
+        attrs["user"] = user
         return attrs
