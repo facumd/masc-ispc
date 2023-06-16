@@ -1,6 +1,8 @@
 # MASC - _Mercado de Arte y Servicios Creativos_
 
-[Link del Sitio MASC Deployado: https://masc-ispc.netlify.app/](https://masc-ispc.netlify.app/)
+[Link del Sitio MASC deployado consumiendo Web API: https://masc-ispc.netlify.app/](https://masc-ispc.netlify.app/)
+
+\*(Sitio usado para presentar el primer y segundo sprint)
 
 ![MASC](https://github.com/facumd/masc-ispc/assets/95236196/f1594db4-e85a-4ee4-9bc2-74e6636ebda1)
 
