@@ -1,0 +1,78 @@
+<section class="min-vh-100 bg-body-tertiary">
+  <div class="d-flex justify-content-center pt-4 mb-4">
+    <h3 class="fw-normal mb-0"><strong>Mi Carrito</strong></h3>
+  </div>
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-10" id="main">
+        <div class="card rounded-3 mb-4" *ngFor="let item of cartItems">
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <img
+                  src="{{ item.image_link }}"
+                  class="img-fluid rounded-3"
+                  alt="image del producto"
+                />
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                <p class="lead fw-normal mb-2">{{ item.title }}</p>
+                <p>
+                  <span class="text-muted">{{ item.description }}</span>
+                </p>
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                <p>x1</p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h5 class="mb-0">{{ item.price | currency }}</h5>
+              </div>
+              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <a (click)="removeFromCart(item)">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-x-circle"
+                    viewBox="0 0 16 16"
+                    cursor="pointer"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body d-flex justify-content-around">
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-lg"
+              (click)="clearCart()"
+            >
+              Vaciar Carrito
+            </button>
+            <p class="py-2">
+              <strong>Total: {{ totalAmount | currency }}</strong>
+            </p>
+            <button
+              type="button"
+              class="btn btn-success btn-lg"
+              (click)="onCheckout()"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

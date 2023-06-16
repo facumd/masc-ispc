@@ -1,30 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { SuccessfulCheckoutComponent } from './successful-checkout/successful-checkout.component';
+import { CancelCheckoutComponent } from './cancel-checkout/cancel-checkout.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule,
-  ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule,
+  declarations: [
     NavbarComponent,
     FooterComponent,
+    NotFoundComponent,
+    AccessDeniedComponent,
+    SuccessfulCheckoutComponent,
+    CancelCheckoutComponent,
   ],
+  exports: [NavbarComponent, FooterComponent],
+  imports: [CommonModule, RouterModule],
 })
 export class SharedModule {}

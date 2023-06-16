@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
-import { AuthModule } from './auth/auth.module';
-import { ServiciosModule } from './servicios/servicios.module';
-import { PagosModule } from './pagos/pagos.module';
-import { AccountModule } from './account/account.module';
+import { StoreModule } from './modules/store/store.module';
+import { AdminModule } from './modules/admin/admin.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,12 +16,11 @@ import { AccountModule } from './account/account.module';
     BrowserModule,
     HttpClientModule,
     SharedModule,
-    HomeModule,
-    ServiciosModule,
     AuthModule,
-    PagosModule,
-    AccountModule,
-    AppRoutingModule,
+    HomeModule,
+    ProfileModule,
+    AdminModule,
+    StoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

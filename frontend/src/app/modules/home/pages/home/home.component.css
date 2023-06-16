@@ -1,0 +1,8 @@
+.hero {
+  min-height: 100vh;
+  background-image: url("https://img.freepik.com/free-vector/background-gradient-green-tones_23-2148360340.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-shadow: 10px 10px 50px #000000;
+}
