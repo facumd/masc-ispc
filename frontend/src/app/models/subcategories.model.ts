@@ -1,12 +1,3 @@
-// To parse this data:
-//
-//   import { Convert } from "./file";
-//
-//   const subcategories = Convert.toSubcategories(json);
-//
-// These functions will throw an error if the JSON doesn't
-// match the expected interface, even if the JSON is valid.
-
 export interface Subcategories {
   id: string;
   name: string;
@@ -17,8 +8,6 @@ export interface Subcategories {
   updated_at: Date;
 }
 
-// Converts JSON strings to/from your types
-// and asserts the results of JSON.parse at runtime
 export class Convert {
   public static toSubcategories(json: string): Subcategories[] {
     return cast(JSON.parse(json), a(r('Subcategories')));

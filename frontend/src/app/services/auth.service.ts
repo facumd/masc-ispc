@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/services/cart.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {
@@ -14,7 +15,11 @@ import { Router } from '@angular/router';
 export class AuthService {
   user = new BehaviorSubject<User | null>(null);
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   signup(account: singupModel) {
     return this.http
@@ -62,8 +67,7 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse) {
     console.log(error);
-    let errorMessage =
-      'El lado del cliente no ha podido conectarse con el servidor';
+    let errorMessage = 'An unknown error occurred';
     if (!error.error) {
       return throwError(() => errorMessage);
     }
@@ -119,6 +123,7 @@ export class AuthService {
   logout() {
     this.user.next(null);
     localStorage.removeItem('user');
+    this.cartService.clearCart();
     this.router.navigate(['/login']);
   }
 }
