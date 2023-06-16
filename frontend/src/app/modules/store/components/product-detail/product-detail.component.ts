@@ -3,9 +3,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { ProductDetail } from 'src/app/models/productDetail.model';
-
 import { ProductService } from 'src/app/services/product.service';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from '../../../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',

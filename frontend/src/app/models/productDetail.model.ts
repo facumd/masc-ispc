@@ -30,8 +30,6 @@ export interface Category {
   updated_at: Date;
 }
 
-// Converts JSON strings to/from your types
-// and asserts the results of JSON.parse at runtime
 export class Convert {
   public static toProductDetail(json: string): ProductDetail {
     return cast(JSON.parse(json), r('ProductDetail'));

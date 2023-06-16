@@ -1,10 +1,10 @@
+import { CartService } from 'src/app/services/cart.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { ProductDetail } from 'src/app/models/productDetail.model';
 
-import { CartService } from 'src/app/services/cart.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ThemeService } from 'src/app/services/theme.service';
 

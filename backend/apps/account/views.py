@@ -15,21 +15,25 @@ class CreateUserView(generics.CreateAPIView):
 
 
 class LoginView(ObtainAuthToken):
-
     serializer_class = AuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
         serializers = self.serializer_class(
-            data=request.data, context={'request': request})
+            data=request.data, context={"request": request}
+        )
         serializers.is_valid(raise_exception=True)
-        user = serializers.validated_data['user']
+        user = serializers.validated_data["user"]
         token, created = Token.objects.get_or_create(user=user)
+        is_admin = user.is_staff
 
-        return Response({
-            'token': token.key,
-            'username': user.username,
-            'user_id': user.id,
-            'email': user.email,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-        })
+        return Response(
+            {
+                "token": token.key,
+                "username": user.username,
+                "user_id": user.id,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "is_admin": is_admin,
+            }
+        )
