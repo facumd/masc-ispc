@@ -9,7 +9,7 @@ import { SuccessfulCheckoutComponent } from 'src/app/shared/successful-checkout/
 import { CancelCheckoutComponent } from 'src/app/shared/cancel-checkout/cancel-checkout.component';
 import { NotFoundComponent } from 'src/app/shared/not-found/not-found.component';
 
-import { AdminGuard } from 'src/app/guards/admin-auth.guard';
+import { AuthGuard } from 'src/app/guards/user-auth.guard';
 
 const routes: Routes = [
   { path: 'store', component: StoreComponent },
@@ -19,13 +19,13 @@ const routes: Routes = [
   {
     path: 'success',
     component: SuccessfulCheckoutComponent,
-    canActivate: [AdminGuard],
+    canActivate: [AuthGuard],
   },
 
   {
     path: 'cancel',
     component: CancelCheckoutComponent,
-    canActivate: [AdminGuard],
+    canActivate: [AuthGuard],
   },
   { path: '**', component: NotFoundComponent },
 ];
