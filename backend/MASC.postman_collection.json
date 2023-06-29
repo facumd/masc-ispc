@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "469a72a6-1740-4fff-8edb-5180e20bad69",
+		"name": "MASC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25582525"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Log User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "falso@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/account/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/product/cancion-muchachos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"cancion-muchachos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "cancion muchachos",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "cancion-muchachos",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "cancion del mundial",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image_link",
+									"value": "https://argentinaprograma.com/static/media/logo.671e5d6036da5865e537.jpg",
+									"type": "text"
+								},
+								{
+									"key": "image_file",
+									"type": "file",
+									"src": "/C:/Users/Facundo/Pictures/img/5.jpg"
+								},
+								{
+									"key": "subcategory",
+									"value": "6114d91e-618d-4200-b518-d732cdba0f1a",
+									"type": "text"
+								},
+								{
+									"key": "created_by",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/product/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": "cancion-muchachos",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "cancion del mundial",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "image_link",
+									"value": "www.google.com",
+									"disabled": true
+								},
+								{
+									"key": "image_file",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Subcategory",
+									"value": "Teatro",
+									"disabled": true
+								},
+								{
+									"key": "created_by",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/product/testi-test",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"testi-test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
