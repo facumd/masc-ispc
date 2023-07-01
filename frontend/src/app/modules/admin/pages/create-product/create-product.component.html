@@ -17,15 +17,13 @@
             formControlName="title"
             placeholder="Ej: Mi Producto Fantastico"
             required
+            [ngClass]="{ 'is-invalid': isInvalidField('title') }"
           />
           <span
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['title'].invalid &&
-              productForm.controls['title'].touched
-            "
+            *ngIf="isInvalidField('title')"
           >
-            Title is required.
+            Se requiere Título.
           </span>
         </div>
         <div class="mb-3">
@@ -37,16 +35,14 @@
             formControlName="slug"
             placeholder="Ej: mi-producto-fantastico"
             required
+            [ngClass]="{ 'is-invalid': isInvalidField('slug') }"
           />
 
           <span
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['slug'].invalid &&
-              productForm.controls['slug'].touched
-            "
+            *ngIf="isInvalidField('slug')"
           >
-            Slug is required.
+            Se requiere Slug.
           </span>
         </div>
         <div class="mb-3">
@@ -57,15 +53,13 @@
             formControlName="description"
             placeholder="Ej: Producto traído desde China, te cambiará la vida ya que facilita el acceso a otros productos"
             required
+            [ngClass]="{ 'is-invalid': isInvalidField('description') }"
           ></textarea>
           <span
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['description'].invalid &&
-              productForm.controls['description'].touched
-            "
+            *ngIf="isInvalidField('description')"
           >
-            Description is required.
+            Se requiere Descripción.
           </span>
         </div>
         <div class="mb-3">
@@ -77,15 +71,13 @@
             formControlName="price"
             min="1"
             required
+            [ngClass]="{ 'is-invalid': isInvalidField('price') }"
           />
           <span
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['price'].invalid &&
-              productForm.controls['price'].touched
-            "
+            *ngIf="isInvalidField('price')"
           >
-            Price is required.
+            Se requiere Precio.
           </span>
         </div>
         <div class="mb-3">
@@ -97,15 +89,13 @@
             formControlName="stock"
             min="1"
             required
+            [ngClass]="{ 'is-invalid': isInvalidField('stock') }"
           />
           <span
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['stock'].invalid &&
-              productForm.controls['stock'].touched
-            "
+            *ngIf="isInvalidField('stock')"
           >
-            Stock is required.
+            Se requiere Stock.
           </span>
         </div>
         <div class="mb-3">
@@ -118,7 +108,14 @@
             id="image_link"
             formControlName="image_link"
             placeholder="Ej: https://www.imagen-sin-copyright.com/static/e-12-rs-200x200.jpg"
+            [ngClass]="{ 'is-invalid': isInvalidField('image_link') }"
           />
+          <span
+            class="invalid-feedback"
+            *ngIf="isInvalidField('image_link')"
+          >
+            Se requiere Link de Imágen.
+          </span>
         </div>
         <div class="mb-3">
           <label for="image_file" class="form-label">Imagen</label>
@@ -127,7 +124,14 @@
             class="form-control"
             id="image_file"
             formControlName="image_file"
+            [ngClass]="{ 'is-invalid': isInvalidField('image_file') }"
           />
+          <span
+            class="invalid-feedback"
+            *ngIf="isInvalidField('image_file')"
+          >
+            Se requiere Imágen.
+          </span>
         </div>
 
         <div class="mb-3">
@@ -136,6 +140,7 @@
             id="subcategory"
             formControlName="subcategory"
             class="form-select"
+            [ngClass]="{ 'is-invalid': isInvalidField('subcategory') }"
           >
             <option value="">Selecciona una subcategoria</option>
             <option
@@ -147,12 +152,9 @@
           </select>
           <div
             class="invalid-feedback"
-            *ngIf="
-              productForm.controls['subcategory'].invalid &&
-              productForm.controls['subcategory'].touched
-            "
+            *ngIf="isInvalidField('subcategory')"
           >
-            Subcategory is required.
+            Se requiere Subcategoria.
           </div>
         </div>
         <button
