@@ -80,4 +80,9 @@ export class CreateProductComponent implements OnInit {
       },
     });
   }
+
+  isInvalidField(field: string): boolean {
+    const control = this.productForm.get(field);
+    return control?.invalid && control?.touched || false;
+  }
 }
